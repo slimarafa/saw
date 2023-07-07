@@ -1,39 +1,14 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-warning">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="#">SaW</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Un selfie</a>
-                  </li>
-
-              </ul>
-              <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="la recherche ..."
-                      aria-label="Recherche">
-                  <button class="btn btn-danger" type="submit">Recherche</button>
-              </form>
-          </div>
-      </div>
-  </nav>
-</header>
+<app-menu-general></app-menu-general>
 <h1>{{title}}</h1>
 <h2>{{subtitle}}</h2>
-<img *ngIf="logoaffiche; else contraireIf " src="https://bpvne.wpenginepowered.com/wp-content/uploads/2019/05/16682378_web1_190503-GNG-MayFourthChewbacca_1-640x427.jpg" alt="" srcset="">
+<!-- <img *ngIf="logoaffiche; else contraireIf " src="https://bpvne.wpenginepowered.com/wp-content/uploads/2019/05/16682378_web1_190503-GNG-MayFourthChewbacca_1-640x427.jpg" alt="" srcset="">
 <ng-template #contraireIf>
 <b>Pas d'image</b>
-</ng-template>
-<ul>
-    <li *ngFor="let unSelfie of lesSelfies">
-        {{unSelfie.wookie.nom}}
-    </li>
-</ul>
+</ng-template> -->
+<main class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <app-selfie-list></app-selfie-list>
+    </div>
+  </div>
+</main>
