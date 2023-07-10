@@ -9,4 +9,9 @@ export class AppComponent {
   title = 'Selfie à Wookies';
   subtitle = 'SaW La super application';
   logoaffiche=true;
+  valeurARechercher:string="";
+  rechercheSelfie(valeurRecherche:string){
+    console.log('appcomponent: ',valeurRecherche)
+    this.valeurARechercher=valeurRecherche;
+  }
 }

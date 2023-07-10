@@ -1,4 +1,4 @@
-<app-menu-general></app-menu-general>
+<app-menu-general (lancerRecherche)="rechercheSelfie($event)"></app-menu-general>
 <h1>{{title}}</h1>
 <h2>{{subtitle}}</h2>
 <!-- <img *ngIf="logoaffiche; else contraireIf " src="https://bpvne.wpenginepowered.com/wp-content/uploads/2019/05/16682378_web1_190503-GNG-MayFourthChewbacca_1-640x427.jpg" alt="" srcset="">
@@ -8,7 +8,7 @@
 <main class="container">
   <div class="row">
     <div class="col-sm-9">
-      <app-selfie-list></app-selfie-list>
+      <app-selfie-list [filtre]="valeurARechercher"></app-selfie-list>
     </div>
   </div>
 </main>
