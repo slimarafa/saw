@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { MenuGeneralComponent } from './shared/components/menu-general/menu-general.component';
@@ -15,7 +17,8 @@ import { LoggerService } from './shared/services/logger/logger.service';
     UnSelfieReadonlyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ], providers: [],
   // providers: [LoggerService],
   bootstrap: [AppComponent]
