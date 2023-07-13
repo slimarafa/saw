@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService } from './shared/services/logger/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,11 @@ export class AppComponent {
   subtitle = 'SaW La super application';
   logoaffiche=true;
   valeurARechercher:string="";
+  constructor(private loggerService:LoggerService){
+
+  }
   rechercheSelfie(valeurRecherche:string){
-    console.log('appcomponent: ',valeurRecherche)
+    this.loggerService.log('appcomponent: ',valeurRecherche)
     this.valeurARechercher=valeurRecherche;
   }
 }
