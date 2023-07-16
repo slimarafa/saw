@@ -3,4 +3,10 @@
         {{unSelfie.wookie.nom}}
     </li>
 </ul> -->
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-success" (click)="ajoutSelfie()">Ajout Selfie</button>
+    </div>
+</div>
+<app-add-selfie *ngIf="selfieAAjouter" [selfieArenseigner]="selfieAAjouter" (annulerAddSelfie)="cacherZoneAddSelfie()"></app-add-selfie>
 <app-un-selfie-readonly [unSelfie] ="selfie" *ngFor="let selfie of lesSelfies"></app-un-selfie-readonly>

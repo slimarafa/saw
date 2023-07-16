@@ -1,0 +1,22 @@
+{{selfieArenseigner | json}}
+<form #maForm="ngForm">
+    <div class="row">
+        <div class="col">Titre : </div>
+        <div class="col"> 
+            <input type="text" #titre="ngModel" [(ngModel)]="selfieArenseigner.titre" required name="titre" >
+            <!-- <span [style.visibility]="titre.valid?'hidden':'visible'"> titre obligatoire</span> -->
+            <span [hidden]="titre.valid"> titre obligatoire</span>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary" [disabled]="!maForm.form.valid"(click)="clickSurAjouter()">Nouveau Selfie</button>
+        </div>
+        <div class="col">
+    <button type="button" class="btn btn-secondary" (click)="clickAnnulerSaisie()">Annuler</button>
+
+        </div>
+    </div>
+</form>
