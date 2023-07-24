@@ -8,8 +8,23 @@
             <span [hidden]="titre.valid"> titre obligatoire</span>
         </div>
     </div>
-
-
+    <div class="row">
+        <div class="col">Ton selfie : </div>
+        <div class="col">
+            <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"             
+            [videoOptions]="videoOptions"
+            [imageQuality]="1"
+            (initError)="handleInitError($event)"
+            ></webcam>
+            <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+        </div>
+    </div>
+    <div class="row snapshot" *ngIf="webcamImage">
+        {{webcamImage.imageAsDataUrl}}
+        <div class="col"> <h2>Nice one!</h2>
+            <img [src]="webcamImage.imageAsDataUrl" alt="webcam image">
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <button type="submit" class="btn btn-primary" [disabled]="!maForm.form.valid"(click)="clickSurAjouter()">Nouveau Selfie</button>
